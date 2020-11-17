@@ -6,7 +6,7 @@
 /*   By: jwon <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 19:20:04 by jwon              #+#    #+#             */
-/*   Updated: 2020/11/17 17:36:38 by jwon             ###   ########.fr       */
+/*   Updated: 2020/11/17 19:04:34 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Phonebook
 {
 	public:
-	Phonebook();
+		Phonebook();
 		void	ascii_art();
 		int		add_contact();
 		int		select_contact();

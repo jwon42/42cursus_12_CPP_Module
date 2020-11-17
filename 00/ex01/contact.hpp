@@ -6,7 +6,7 @@
 class Contact
 {
 	public:
-	Contact();
+		Contact();
 		int		input_infomation(int idx);
 		void	view_contact_list();
 		void	view_contact_detail(int	idx);
