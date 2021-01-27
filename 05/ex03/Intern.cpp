@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:32:35 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/26 16:37:07 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/27 19:13:50 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,32 +34,34 @@ Intern::~Intern()
 
 Form*		Intern::makeForm(std::string formName, std::string target)
 {
-	Form	*form;
+    std::string targets[3] =
+    {
+        "shrubbery creation",
+        "robotomy request",
+        "presidential pardon"
+    };
+    Form       *forms[3];
+    Form       *ret = 0;
 
-	form = 0;
-	// if (!formName.compare("shrubbery creation"))
-	// 	form = new ShrubberyCreationForm(target);
-	// else if (!formName.compare("robotomy request"))
-	// 	form = new RobotomyRequestForm(target);
-	// else if (!formName.compare("presidential pardon"))
-	// 	form = new PresidentialPardonForm(target);
-	if (formName == "shrubbery creation")
-		form = new ShrubberyCreationForm(target);
-	else if (formName == "robotomy request")
-		form = new RobotomyRequestForm(target);
-	else if (formName == "presidential pardon")
-		form = new PresidentialPardonForm(target);
-	if (form != 0)
-	{
-		std::cout << "Intern creates "
-			<< formName << " form." << std::endl;
-		return (form);
-	}
-	else
-	{
-		throw Intern::InvalidTypeFormException();
-		return (nullptr);
-	}
+    forms[0] = new ShrubberyCreationForm(target);
+    forms[1] = new RobotomyRequestForm(target);
+    forms[2] = new PresidentialPardonForm(target);
+
+    int i;
+    for (i = 0 ; i < 3 ; i++)
+    {
+        if (formName == targets[i])
+        {
+            std::cout << "Intern creates " << formName << " form." << std::endl;
+            ret = forms[i];
+            continue;
+        }
+        delete forms[i];
+    }
+    if (ret != 0)
+        return (ret);
+    throw Intern::InvalidTypeFormException();
+    return (nullptr);
 }
 
 const char* Intern::InvalidTypeFormException::what() const throw()
