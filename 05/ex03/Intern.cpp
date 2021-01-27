@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:32:35 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/28 00:15:26 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/28 00:17:06 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Intern::~Intern()
 {
 }
 
-int			Intern::checkFormname(std::string formName)
+int			Intern::selectFormIdx(std::string formName)
 {
 	int			ret;
 	std::string formNames[3] = {
@@ -71,7 +71,7 @@ Form*		Intern::makeForm(std::string formName, std::string target)
 {
 	int			formIdx;
 
-	formIdx = checkFormname(formName);
+	formIdx = selectFormIdx(formName);
 	if (formIdx != -1)
 	{
 		std::cout << "Intern creates "

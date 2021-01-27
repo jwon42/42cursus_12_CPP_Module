@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:21:00 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/27 23:32:41 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/28 00:17:01 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Intern
 		~Intern(); // Destructor (소멸자)
 		// Canonical Form
 
-		int			checkFormname(std::string formName);
+		int			selectFormIdx(std::string formName);
 		Form*		selectForm(int idx, std::string target);
 		Form*		makeForm(std::string formName, std::string target);
 
