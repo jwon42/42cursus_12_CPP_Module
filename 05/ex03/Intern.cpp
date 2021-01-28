@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:32:35 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/28 00:17:06 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/28 11:15:09 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,14 @@ Form*		Intern::makeForm(std::string formName, std::string target)
 	int			formIdx;
 
 	formIdx = selectFormIdx(formName);
-	if (formIdx != -1)
-	{
-		std::cout << "Intern creates "
-			<< formName << " form." << std::endl;
-		return (selectForm(formIdx, target));
-	}
-	else
+	if (formIdx == -1)
 	{
 		throw Intern::InvalidTypeFormException();
 		return (nullptr);
 	}
+	std::cout << "Intern creates "
+		<< formName << " form." << std::endl;
+	return (selectForm(formIdx, target));
 }
 
 const char* Intern::InvalidTypeFormException::what() const throw()
