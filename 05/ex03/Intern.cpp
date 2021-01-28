@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 15:32:35 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/28 11:15:09 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/28 11:18:56 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,17 @@ int			Intern::selectFormIdx(std::string formName)
 
 Form*		Intern::selectForm(int idx, std::string target)
 {
-	Form	*ret;
 	Form	*forms[3];
 
 	forms[0] = new ShrubberyCreationForm(target);
 	forms[1] = new RobotomyRequestForm(target);
 	forms[2] = new PresidentialPardonForm(target);
-	ret = forms[idx];
 	for (int i = 0 ; i < (int)(sizeof(**forms)/sizeof(Form)) ; i++)
 	{
 		if (i != idx)
 			delete forms[i];
 	}
-	return (ret);
+	return (forms[idx]);
 }
 
 Form*		Intern::makeForm(std::string formName, std::string target)
