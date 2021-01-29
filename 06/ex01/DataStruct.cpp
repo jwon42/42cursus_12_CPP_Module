@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 01:58:41 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/30 01:34:12 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/30 01:35:26 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*serialize(void)
 	size_t			size_int;
 	size_t			size_raw;
 
-	// set base charactors
+	// set base characters
 	std::string		alphaNumerical = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 	// calculate types size
