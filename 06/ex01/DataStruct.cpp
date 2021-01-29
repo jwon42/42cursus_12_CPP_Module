@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 01:58:41 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/29 11:51:29 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/29 13:24:12 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*serialize(void)
 	// calculate types size
 	size_string = sizeof(std::string); // 24 bytes
 	size_int = sizeof(int); // 4 bytes
-	size_raw = size_string * 2 + size_int; // 52 bytes;
+	size_raw = size_string * 2 + size_int; // 52 bytes
 
 	// allocate heap area
 	raw = new char[size_raw];
