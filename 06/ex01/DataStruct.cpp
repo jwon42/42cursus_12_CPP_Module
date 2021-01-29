@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 01:58:41 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/29 13:24:12 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/29 15:10:59 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	*serialize(void)
 		s1 += alphaNumerical[rand() % alphaNumerical.length()];
 		s2 += alphaNumerical[rand() % alphaNumerical.length()];
 	}
-	// std::cout << s1 << n << s2 << std::endl;
+	std::cout << s1 << n << s2 << std::endl;
 
 	// copy value to raw -> serialize
 	memcpy(raw, reinterpret_cast<char *>(&s1), size_string);
