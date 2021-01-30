@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 21:34:05 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/30 00:07:39 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/30 14:55:37 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,21 @@ std::string dash(50, '-');
 
 void arrayTest(unsigned int);
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	unsigned int	n;
+	int	n;
 
+	// check number of arguments
 	if (argc != 2)
 	{
 		std::cerr << "Error: Invalid arguments" << std::endl;
 		return (EXIT_FAILURE);
 	}
+
+	// check stoi exceptions
 	try
 	{
-		n = atoi(argv[1]);
+		n = std::stoi(static_cast<std::string>(argv[1]));
 	}
 	catch(const std::exception& e)
 	{
@@ -35,6 +38,14 @@ int main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 
+	 // check whether a number is positive or negative
+	if (n < 0)
+	{
+		std::cerr << "Error: Invalid arguments" << std::endl;
+		return (EXIT_FAILURE);
+	}
+
+	// start test
 	std::cout << "\n\t\t\033[1;31m     ARRAY TEST\033[0m" << std::endl;
 	arrayTest(static_cast<unsigned int>(n));
 
@@ -133,7 +144,7 @@ void arrayTest(unsigned int n)
 	std::cout << std::endl;
 
 	std::cout << dash << std::endl;
-	std::cout << ">>> TEST: Out of range <<<" << std::endl;
+	std::cout << ">>> TEST: Out of range exception <<<" << std::endl;
 	std::cout << dash << std::endl;
 	std::cout << "std::cout << stringArr[-1];" << std::endl;
 	std::cout << dash << std::endl;
@@ -156,5 +167,16 @@ void arrayTest(unsigned int n)
 	{
 		std::cerr << e.what() << '\n';
 	}
+	std::cout << dash << std::endl;
+	std::cout << std::endl;
+
+	std::cout << dash << std::endl;
+	std::cout << ">>> TEST: Check array size <<<" << std::endl;
+	std::cout << dash << std::endl;
+	std::cout << "intArr.size() : " << intArr.size() << std::endl;
+	std::cout << "intArr2.size() : " << intArr2.size() << std::endl;
+	std::cout << "doubleArr.size() : " << doubleArr.size() << std::endl;
+	std::cout << "charArr.size() : " << charArr.size() << std::endl;
+	std::cout << "stringArr.size() : " << stringArr.size() << std::endl;
 	std::cout << dash << std::endl;
 }

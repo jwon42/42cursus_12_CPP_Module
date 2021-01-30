@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 22:19:23 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/30 00:18:33 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/30 14:36:32 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ Array<T>::~Array()
 template <typename T>
 T& Array<T>::operator[](unsigned int idx)
 {
-	if (idx >= this->m_n)
+	if (idx < 0 || idx >= this->m_n)
 		throw OutOfIndexException();
 	return (this->m_element[idx]);
 }
@@ -65,7 +65,7 @@ T& Array<T>::operator[](unsigned int idx)
 template <typename T>
 const T& Array<T>::operator[](unsigned int idx) const
 {
-	if (idx >= this->m_n)
+	if (idx < 0 || idx >= this->m_n)
 		throw OutOfIndexException();
 	return (this->m_element[idx]);
 }
