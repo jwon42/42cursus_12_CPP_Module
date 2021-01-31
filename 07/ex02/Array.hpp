@@ -6,7 +6,7 @@
 /*   By: jwon <jwon@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 21:33:55 by jwon              #+#    #+#             */
-/*   Updated: 2021/01/29 23:00:43 by jwon             ###   ########.fr       */
+/*   Updated: 2021/01/31 13:57:25 by jwon             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Array
 {
 	public:
 		Array();
-		Array(unsigned int);
+		Array(unsigned int n);
 		Array(Array const &ref);
 		Array& operator=(Array const &ref);
 		virtual ~Array();
